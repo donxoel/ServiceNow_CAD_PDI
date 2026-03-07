@@ -36,4 +36,16 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 
 ## 🚀 How to Use
 1. **Submit:** Users navigate to the Loaner Request module and fill out the form.
-2. **Approve:** The "Requested For'
+2. **Approve:** The "Requested For's" manager receives an approval request.
+3. **Deploy:** Once approved, a UI Policy highlights the 'Asset Tag' field for the technician to fill.
+4. **Return:** Closing the task triggers a notification to the user thanking them for the return.
+
+---
+
+## 📂 Repository Structure
+* `update/`: Contains the XML payloads for application files.
+* `dictionary/`: Table and field definitions.
+* `sys_script/`: Business Rules and logic.
+
+---
+*Developed as part of the ServiceNow CAD Learning Path.*
