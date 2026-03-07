@@ -1,58 +1,39 @@
-Loaner Request Application 🚗💻
-ServiceNow CAD Certification PDI Project
-Overview
-The Loaner Request application is a custom ServiceNow scoped application designed to manage the end-to-end lifecycle of short-term asset loans (such as laptops, tablets, or vehicles). This project was developed as part of the ServiceNow Certified Application Developer (CAD) learning path to demonstrate proficiency in building custom applications on the Now Platform.
+# Loaner Request Application 📋
+**ServiceNow Certified Application Developer (CAD) - Training Project**
 
-🛠 Key Features
-Self-Service Portal: Users can submit requests for specific equipment with start and end dates.
+## 📖 Project Overview
+The **Loaner Request** application is a custom scoped application built on the ServiceNow Now Platform. It automates the process of requesting, approving, and tracking short-term assets (Laptops, Mobile Devices, etc.) within an organization.
 
-Automated State Management: Tracks the transition from Requested to Reserved, Deployed, and Returned.
+This project demonstrates core CAD competencies including **Data Modeling**, **UI Customization**, **Server-side Scripting**, and **Flow Automation**.
 
-Dynamic Validations: Ensures end dates are not before start dates and prevents weekend pickups via Client Scripts.
+---
 
-Automated Notifications: Sends alerts to users when their loaner item is ready for pickup or overdue.
+## 🛠 Technical Features
 
-Reporting & Dashboards: Visualizes current loaner trends and inventory availability.
+### 1. Data Schema & UI
+* **Table:** `x_snc_loaner_req_loaner_request` (Extends `Task`).
+* **Form Design:** Organized using **Sectons** (Financials, Dates, Logistics) and **Annotations** for user guidance.
+* **Views:** Created a specific 'Self Service' view for end-users.
 
-🏗 Technical Components
-1. Data Model
-Table: x_snc_loaner_req_loaner_request (Extends Task)
+### 2. Business Logic (Scripting)
+* **Client Scripts:** * `Set Start Date`: Automatically sets the start date to "Today".
+    * `Validate Dates`: Prevents the End Date from being set before the Start Date using `GlideDateTime`.
+* **Business Rules:** * `Set Duration`: Calculates the total loan time before the record is saved.
+    * `Task Updates`: Syncs work notes between the Request and child Tasks.
+* **Script Includes:** * `LoanerUtils`: A server-side class to handle complex date calculations and availability checks.
 
-Key Fields:
+### 3. Process Automation
+* **Flow Designer:** * Trigger: Record Created.
+    * Actions: Sends Approval to Manager -> Creates Catalog Tasks for Fulfillment -> Sends Confirmation Email.
+* **Scheduled Script Executions:** A daily job that checks for "Overdue" records and updates the state to 'Missed Return'.
 
-Item Type: Choice list (Laptop, Mobile, Other).
+### 4. Security & Access
+* **Roles:** Created `x_snc_loaner_req.admin` and `x_snc_loaner_req.user`.
+* **ACLs:** Restricted the "Financials" section to only be visible to users with the Admin role.
+* **Module Permissions:** Controlled visibility of the Application Menu in the Filter Navigator.
 
-Start Date / End Date: Date/Time fields for duration.
+---
 
-Depot: Reference to location records.
-
-2. Business Logic & Scripting
-Client Scripts: UI validation for date consistency and "Requested for" auto-population.
-
-Business Rules: Server-side logic to calculate duration and handle state transitions.
-
-Script Includes: Reusable AJAX calls for date calculations using GlideDateTime.
-
-3. Workflow & Automation
-Flow Designer: Handles approval routing and task creation for the fulfillment team.
-
-Scheduled Jobs: Daily checks to identify overdue items and trigger "Long-term Loan" reminders.
-
-4. Security
-ACLs: Role-based access control for admin, user, and fulfiller roles.
-
-Application Scoping: Ensures the application logic is isolated and does not conflict with Global scope apps.
-
-🚀 Installation & Setup
-Fork this repository.
-
-In your ServiceNow PDI, navigate to Studio.
-
-Select Import from Source Control.
-
-Paste your Repository URL and Credentials.
-
-Run the Scheduled Script Execution "Generate Mock Data" (if included) to populate your instance.
-
-📸 Preview
-Tip: Take a screenshot of your Loaner Request Form or Dashboard and save it as screenshot.png in your repo to display it here!
+## 🚀 How to Use
+1. **Submit:** Users navigate to the Loaner Request module and fill out the form.
+2. **Approve:** The "Requested For'
