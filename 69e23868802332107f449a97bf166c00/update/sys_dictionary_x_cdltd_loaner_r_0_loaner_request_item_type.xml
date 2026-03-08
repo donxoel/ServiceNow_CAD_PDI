@@ -2,7 +2,7 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="item_type" table="x_cdltd_loaner_r_0_loaner_request">
         <active>true</active>
         <array>false</array>
-        <attributes/>
+        <attributes>edge_encryption_enabled=true</attributes>
         <audit>false</audit>
         <calculation/>
         <choice>1</choice>
