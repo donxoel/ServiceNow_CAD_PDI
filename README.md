@@ -16,27 +16,30 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 * **Views:** Created a specific 'Self Service' view for end-users.
 
 ### 2. Business Logic (Scripting)
-* **Client Scripts:** * `Set Start Date`: Automatically sets the start date to "Today".
+* **Client Scripts:**
+    * `Set Start Date`: Automatically sets the start date to Today.
     * `Validate Dates`: Prevents the End Date from being set before the Start Date using `GlideDateTime`.
-* **Business Rules:** * `Set Duration`: Calculates the total loan time before the record is saved.
+* **Business Rules:**
+    * `Set Duration`: Calculates the total loan time before the record is saved.
     * `Task Updates`: Syncs work notes between the Request and child Tasks.
 * **Script Includes:** * `LoanerUtils`: A server-side class to handle complex date calculations and availability checks.
 
 ### 3. Process Automation
-* **Flow Designer:** * Trigger: Record Created.
+* **Flow Designer:**
+    * Trigger: Record Created.
     * Actions: Sends Approval to Manager -> Creates Catalog Tasks for Fulfillment -> Sends Confirmation Email.
-* **Scheduled Script Executions:** A daily job that checks for "Overdue" records and updates the state to 'Missed Return'.
+* **Scheduled Script Executions:** A daily job that checks for Overdue records and updates the state to 'Missed Return'.
 
 ### 4. Security & Access
-* **Roles:** Created `x_snc_loaner_req.admin` and `x_snc_loaner_req.user`.
-* **ACLs:** Restricted the "Financials" section to only be visible to users with the Admin role.
+* **Roles:** Created `x_cdltd_loaner_r_0.admin` and `x_cdltd_loaner_r_0.user`.
+* **ACLs:** Restricted the Financials section to only be visible to users with the Admin role.
 * **Module Permissions:** Controlled visibility of the Application Menu in the Filter Navigator.
 
 ---
 
 ## 🚀 How to Use
 1. **Submit:** Users navigate to the Loaner Request module and fill out the form.
-2. **Approve:** The "Requested For's" manager receives an approval request.
+2. **Approve:** The Requested For's manager receives an approval request.
 3. **Deploy:** Once approved, a UI Policy highlights the 'Asset Tag' field for the technician to fill.
 4. **Return:** Closing the task triggers a notification to the user thanking them for the return.
 
