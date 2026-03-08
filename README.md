@@ -11,7 +11,7 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 ## 🛠 Technical Features
 
 ### 1. Data Schema & UI
-* **Table:** `x_snc_loaner_req_loaner_request` (Extends `Task`).
+* **Table:** `x_cdltd_loaner_r_0_loaner_request` (Extends `Task`).
 * **Form Design:** Organized using **Sectons** (Financials, Dates, Logistics) and **Annotations** for user guidance.
 * **Views:** Created a specific 'Self Service' view for end-users.
 
