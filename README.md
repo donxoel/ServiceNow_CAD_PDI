@@ -29,7 +29,8 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 * **Flow Designer:**
     * Trigger: Record Created.
     * Actions: Sends Approval to Manager -> Creates Catalog Tasks for Fulfillment -> Sends Confirmation Email.
-* **Scheduled Script Executions:** A daily job that checks for Overdue records and updates the state to 'Missed Return'.
+* **Scheduled Script Executions:**
+    * A daily job that checks for Overdue records and updates the state to 'Missed Return'.
 
 ### 4. Security & Access
 * **Roles:** Created `x_cdltd_loaner_r_0.admin` and `x_cdltd_loaner_r_0.user`.
