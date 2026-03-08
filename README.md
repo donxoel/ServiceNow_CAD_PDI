@@ -12,7 +12,7 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 
 ### 1. Data Schema & UI
 * **Table:** `x_cdltd_loaner_r_0_loaner_request` (Extends `Task`).
-* **Form Design:** Organized using **Sectons** (Financials, Dates, Logistics) and **Annotations** for user guidance.
+* **Form Design:** Organized using **Sections** (Financials, Logs & Dates, Statistics) and **Annotations** for user guidance.
 * **Views:** Created a specific 'Self Service' view for end-users.
 
 ### 2. Business Logic (Scripting)
