@@ -22,7 +22,8 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 * **Business Rules:**
     * `Set Duration`: Calculates the total loan time before the record is saved.
     * `Task Updates`: Syncs work notes between the Request and child Tasks.
-* **Script Includes:** * `LoanerUtils`: A server-side class to handle complex date calculations and availability checks.
+* **Script Includes:**
+* `LoanerUtils`: A server-side class to handle complex date calculations and availability checks.
 
 ### 3. Process Automation
 * **Flow Designer:**
