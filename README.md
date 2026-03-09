@@ -34,7 +34,8 @@ This project demonstrates core CAD competencies including **Data Modeling**, **U
 
 ### 4. Security & Access
 * **Roles:** Created `x_cdltd_loaner_r_0.admin` and `x_cdltd_loaner_r_0.user`.
-* **ACLs:** Restricted the Financials section to only be visible to users with the Admin role.
+* **ACLs:** Restricted some modules to only be visible to users with the Admin role.
+* **Application Access:** Granting other application scopes the ability to create configuration records.
 * **Module Permissions:** Controlled visibility of the Application Menu in the Filter Navigator.
 
 ---
