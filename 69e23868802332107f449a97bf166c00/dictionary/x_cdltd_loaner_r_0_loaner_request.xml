@@ -27,6 +27,7 @@
                 <element inactive_on_update="false" label="dd" sequence="0" value="dd"/>
             </choice>
         </element>
+        <element label="Pick up reminder" max_length="255" name="pick_up_reminder" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
     </element>
 </database>
